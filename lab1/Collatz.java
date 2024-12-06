@@ -10,7 +10,7 @@ public class Collatz {
         } else if (n == 5) {
             return 3 * n + 1;
         } else {
-            return n * 2;
+            return n / 2;
         }
     }
 
@@ -19,7 +19,10 @@ public class Collatz {
         System.out.print(n + " ");
         while (n != 1) {
             n = nextNumber(n);
-            System.out.print(n + " ");
+            if(n!=1)
+                System.out.print(n + " ");
+            else
+                System.out.println(n);
         }
         System.out.println();
     }
