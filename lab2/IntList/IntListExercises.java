@@ -10,7 +10,7 @@ public class IntListExercises {
      */
     public static void addConstant(IntList lst, int c) {
         IntList head = lst;
-        while (head.rest != null) {
+        while (head != null) {
             head.first += c;
             head = head.rest;
         }
@@ -24,7 +24,10 @@ public class IntListExercises {
      * @param L IntList from Lecture
      */
     public static void setToZeroIfMaxFEL(IntList L) {
+        //先检查第一个,然后找从第二个开始到末尾的最大数,这个数就是下一个位置
         IntList p = L;
+        if(firstDigitEqualsLastDigit(p.first));
+            p.first=0;
         while (p != null) {
             if (firstDigitEqualsLastDigit(max(p))) {
                 p.first = 0;
@@ -51,7 +54,7 @@ public class IntListExercises {
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
-        while (x > 10) {
+        while (x >= 10) {
             x = x / 10;
         }
         int firstDigit = x % 10;
